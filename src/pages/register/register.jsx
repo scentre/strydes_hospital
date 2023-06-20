@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { errorToast, successToast } from "../../utils";
 import { registerUser } from "../../store/auth/authActions";
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
 import Cicles from "../../assets/circles.svg";
 
 import docs from "../../assets/docs.svg";
+import InputBox from "../../components/inputBox";
 export const Register = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.auth);
@@ -116,6 +117,45 @@ export const Register = () => {
               >
                 Register Your Hospital
               </Text>
+            </Box>
+
+            <Box
+              padding={"20px"}
+              gap={"30px"}
+              display={"flex"}
+              flexDirection={"column"}
+            >
+              <Box display={"flex"} justifyContent={"space-between"}>
+                <InputBox label="Hospital Name" />
+                <InputBox label="Hospital License" />
+              </Box>
+              <Box>
+                <InputBox label="Hospital Address" />
+              </Box>
+              <Box>
+                <InputBox label="Hospital Address" />
+              </Box>
+              <Grid display={"grid"} gridTemplateColumns={"1fr 1fr"}>
+                <InputBox label="Password" />
+                <GridItem rowSpan={"2"}>
+                  <InputBox label="Hospital Name" size="large" />
+                </GridItem>
+                <InputBox label="Confirm Password" />
+              </Grid>
+
+              <Button
+                width={"50%"}
+                alignSelf={"center"}
+                padding={"30px 20px"}
+                color={"white"}
+                bg="linear-gradient(271.04deg, #278175 29.96%, #30BDAA 58.99%, #02A499 70.16%, #01A499 94.91%);"
+                fontSize={"20px"}
+                fontFamily={"Inter"}
+                boxShadow={"0px 8px 40px -8px #0C5F55"}
+                borderRadius={"15px"}
+              >
+                Create Account
+              </Button>
             </Box>
           </Box>
         </Flex>
