@@ -6,6 +6,8 @@ import { PrivateRoute } from "../privateRoute";
 import { PublicRoute } from "../publicRoute";
 import Styles from "./app.module.scss";
 import EmailConfirmation from "../../pages/emailConfirmation";
+import AdminPageLayout from "../adminPageLayout";
+import AdminContent from "../adminContent";
 
 function App() {
   return (
@@ -27,6 +29,19 @@ function App() {
             path="/register"
             element={<PublicRoute restricted={true} component={Register} />}
           />
+          <Route
+            path="/admin"
+            element={
+              <PublicRoute restricted={true} component={AdminPageLayout} />
+            }
+          >
+            <Route
+              path="/admin"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            ></Route>
+          </Route>
         </Routes>
       </Layout>
     </div>
