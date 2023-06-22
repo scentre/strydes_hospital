@@ -61,7 +61,7 @@ export const Register = () => {
           >
             <Box display={"flex"} height={"100%"} width={"100%"}>
               <Box
-                mt={"50px"}
+                // mt={"50px"}
                 display={"flex"}
                 flexDirection={"column"}
                 width={"100%"}
@@ -93,7 +93,7 @@ export const Register = () => {
               </Box>
             </Box>
           </Box>
-          <Box className=" w-100" width={"100%"} padding={"50px"}>
+          <Box className=" w-100" width={"100%"} padding={"30px"}>
             <Box>
               <Text
                 color={"#F1B749"}
