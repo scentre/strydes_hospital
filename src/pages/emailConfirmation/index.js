@@ -14,38 +14,36 @@ const EmailConfirmation = () => {
     <section >
 			<Toaster />
       <Container maxWidth={'100%'} height={'100vh'} className='p-8' bgColor={'#E7FFF5'}>
-        <Flex height={'90%'} width={'90%'} justify={'space-between'} className='m-10' bgColor={'#E7FFF5'}>
-          <Container boxShadow={"0px 8px 40px -8px #0C5F55"} bgColor={'#FFF'} maxWidth={'60%'} className='flex flex-row  m-8' borderRadius={'2rem'}>
-            <Box className='pt-10' width={'100%'} overflow={'hidden'} >
-              <Box position={'absolute'} top={'9'} className='h-15 w-15' bgColor={'#D9993F'} borderRadius={'50%'}></Box>
+        <Flex height={'90%'} width={'90%'} position={'relative'} className='m-10' bgColor={'#E7FFF5'}>
+          <Container boxShadow={"0px 8px 40px -8px #0C5F55"}  bgColor={'#FFF'} maxWidth={'60%'} className='flex flex-row  m-8' borderRadius={'2rem'}>
+            <Box className='pt-10' width={'100%'} overflow={'hidden'}>
+              <Box boxShadow={"0px 8px 40px -8px #0C5F55"} position={'absolute'} top={'5px'} right={'270px'} textAlign={'center'} className='h-14 w-14' bgColor={'#D9993F'} borderRadius={'50%'}></Box>
               <Text
                 color={"#F1B749"}
-                display={"flex"}
-                flexDirection={"column"}
-                justifyContent={"center"}
-                alignItems={"center"}
+                textAlign={'center'}
                 fontSize={"36px"}
                 fontWeight={"700"}
                 mb={"20px"}
               >
-                STRYDES <span className="text-[#0C5F55] ">HOSPITAL</span>
+                STRYDES <br /> <span className="text-[#0C5F55] ">HOSPITAL</span>
               </Text>
-
+              
               <Text
-                className='p-1'
-                justifyContent={"center"}
-                alignItems={"center"}
+                width={'70%'}
+                className='p-1 m-auto'
+                textAlign={'center'}
                 fontSize={"20px"}
                 fontWeight={"700"}
-                display={"flex"}
                 color={'#585252'}
                 lineHeight={'20px'}
+                letterSpacing={'3px'}
               >
                 Email Confirmation sent
               </Text>
               <Text
-                className='m-auto p-5'
-                width={'40%'}
+                
+                className='p-3 m-auto'
+                width={'35%'}
                 textAlign={"center"}
                 fontSize={"10px"}
                 fontWeight={"700"}

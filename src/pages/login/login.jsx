@@ -40,51 +40,43 @@ export const Login = () => {
 		<section >
 			<Toaster />
 			<Container maxWidth={'100%'} height={'100vh'} className='p-8' bgColor={'#E7FFF5'}>
-				<Flex height={'90%'} width={'90%'} justify={'space-between'} className='m-10' bgColor={'#EEF8FF'}>
-					<Container position={'relative'} boxShadow={"0px 8px 40px -8px #0C5F55"} maxWidth={'80%'} className='flex flex-row  m-8' borderRadius={'2rem'}>
+				<Container maxWidth={'80%'} position={'relative'} textAlign={'center'} className='m-10 py-8' bgColor={'#EEF8FF'}>
+					<Flex boxShadow={"0px 8px 40px -8px #0C5F55"} maxWidth={'80%'} className='flex flex-row justify-between  m-auto' borderRadius={'3rem'}>
 
+						<Box boxShadow={"0px 8px 40px -8px #0C5F55"} position={'absolute'} top={'5px'} left={'350px'} textAlign={'center'} className='h-14 w-14' bgColor={'#D9993F'} borderRadius={'50%'}></Box>
 						
-						<Box position={'absolute'} top={''} className='h-20 w-20' bgColor={'#D9993F'} borderRadius={'50%'}></Box>
-						
-						<Container width={'100%'}>
-							<Box
-								bg={`url(${Cicles})`}
-								bgRepeat="no-repeat"
-								bgSize={"cover"}
-								borderRadius={'5rem'}
-								height={'100%'}
-							>
-								<Box className='flex flex-col' height={'auto'}>
-									
-									
-									
-									<Text
-										className='mt-20 pl-3'
-										width={'70%'}
-										color={"#F1B749"}
-										fontSize={"40px"}
-										fontWeight={"700"}
-									>
-										Your One Stop
-									</Text>
-									<Text
-										className='pl-3'
-										color={"white"}
-										fontSize={"100px"}
-										fontWeight={"900"}
-									>
-										EMR
-									</Text>
-									<Box >
-										<img
-											height={'100%'}
-											className='w-full'
-											src={docs}
-											overflow={'hidden'}
-											alt="docs"
-										/>
-									</Box>
-									
+						<Container
+							bg={`url(${Cicles})`}
+							bgRepeat="no-repeat"
+							bgSize={"cover"}
+							overflow={'hidden'}
+							
+						>
+							<Box height={'100%'} width={'100%'}>
+								<Text
+									textAlign={'start'}
+									className='mt-20 pl-3'
+									color={"#F1B749"}
+									fontSize={"40px"}
+									fontWeight={"700"}
+								>
+									Your One Stop
+								</Text>
+								<Text
+									pl={'3'}
+									textAlign={'start'}
+									color={"white"}
+									fontSize={"50px"}
+									fontWeight={"900"}
+								>
+									EMR
+								</Text>
+								<Box mt={'20'} >
+									<img
+										className='w-full'
+										src={docs}
+										alt="docs"
+									/>
 								</Box>
 							</Box>
 						</Container>
@@ -119,14 +111,17 @@ export const Login = () => {
 								</Box>
 								<form action="" onSubmit={signinUser}>
 									<Box
+										className='font-bold'
+										fontSize={"12px"}
+										color={'#585252'}
 										padding={"20px"}
 										gap={"20px"}
 										display={"flex"}
 										flexDirection={"column"}
 										justifyContent={'space-between'}
 									>
-										<Box>
-											<InputBox label="Email Address" ml-5/>
+										<Box >
+											<InputBox label="Email Address"/>
 										</Box>
 										<Box>
 											<InputBox label="Password" />
@@ -137,6 +132,7 @@ export const Login = () => {
 									</Box>
 									<Box className='mt-4' textAlign={'center'}>
 										<Button
+											className='hover:text-[#0C5F55]'
 											width={"50%"}
 											alignSelf={"center"}
 											padding={"30px 20px"}
@@ -153,8 +149,8 @@ export const Login = () => {
 								</form>
 							</Box>
 						</Container>
-					</Container>
-				</Flex>
+					</Flex >
+				</Container>
 			</Container>
     	</section>
 	);
