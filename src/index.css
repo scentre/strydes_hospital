@@ -55,3 +55,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.react-calendar {
+  border-radius: 20px;
+  border: 0 !important;
+  border-radius: 50px;
+  background: var(--day-card, #fff);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
+  padding: 5px 15px;
+  width: 100% !important;
+}

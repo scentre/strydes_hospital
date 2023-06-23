@@ -8,9 +8,11 @@ const AdminPageLayout = () => {
     <div className="flex p-[8px] w-full">
       <AdminSideBar />
 
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full ">
         <AdminHeader />
-        <Outlet />
+        <div className="p-6">
+          <Outlet />
+        </div>
       </div>
     </div>
   );

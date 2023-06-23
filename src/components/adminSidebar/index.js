@@ -11,19 +11,22 @@ import menu from "../../assets/menu.svg";
 import pot from "../../assets/pot.svg";
 import settings from "../../assets/settings.svg";
 import users from "../../assets/users.svg";
+import { useNavigate } from "react-router-dom";
 const AdminSideBar = () => {
   let logos = [
-    bank,
-    bucket,
-    circle,
-    home,
-    lab,
-    cross,
-    menu,
-    pot,
-    settings,
-    users,
+    { icon: bank, name: "bank" },
+    { icon: users, name: "user" },
+    { icon: circle, name: "circle" },
+    { icon: lab, name: "lab" },
+    { icon: cross, name: "cross" },
+    { icon: bucket, name: "bucket" },
+    { icon: home, name: "home" },
+    { icon: menu, name: "menu" },
+    { icon: pot, name: "pot" },
+    { icon: settings, name: "settings" },
   ];
+
+  const navigate = useNavigate();
   return (
     <Box
       bg="linear-gradient(180.62deg, #278175 0.21%, #01A499 99.82%)"
@@ -37,9 +40,17 @@ const AdminSideBar = () => {
     >
       <Image src={logo} width={"80px"} cursor={"pointer"} />
 
-      {logos.map((item) => (
-        <Image src={item} width={"30px"} cursor={"pointer"} />
-      ))}
+      {logos.map(({ icon, name }) => {
+        return (
+          <Image
+            key={name}
+            src={icon}
+            width={"30px"}
+            cursor={"pointer"}
+            onClick={() => navigate(`/admin/${name}`)}
+          />
+        );
+      })}
     </Box>
   );
 };

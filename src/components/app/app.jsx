@@ -7,7 +7,7 @@ import { PublicRoute } from "../publicRoute";
 import Styles from "./app.module.scss";
 import EmailConfirmation from "../../pages/emailConfirmation";
 import AdminPageLayout from "../adminPageLayout";
-import AdminContent from "../adminContent";
+import AdminBank from "../../pages/adminBank";
 
 function App() {
   return (
@@ -36,11 +36,63 @@ function App() {
             }
           >
             <Route
-              path="/admin"
+              path="bank"
+              element={<PublicRoute restricted={true} component={AdminBank} />}
+            />
+            {/* <Route
+              path="user"
               element={
                 <PublicRoute restricted={true} component={AdminContent} />
               }
-            ></Route>
+            />
+            <Route
+              path="circle"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            />
+            <Route
+              path="lab"
+              element={
+                <PublicRoute restricted={true} component={AdminContentLayout} />
+              }
+            />
+            <Route
+              path="cross"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            />
+            <Route
+              path="bucket"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            />
+            <Route
+              path="home"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            />
+            <Route
+              path="menu"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            />
+            <Route
+              path="pot"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            />
+            <Route
+              path="settings"
+              element={
+                <PublicRoute restricted={true} component={AdminContent} />
+              }
+            /> */}
           </Route>
         </Routes>
       </Layout>
