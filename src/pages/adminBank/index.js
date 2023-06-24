@@ -5,6 +5,8 @@ import AdminCard from "../../components/adminCard";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import AdminTable from "../../components/adminTable";
+import DateFilter from "../../components/dateFilter";
+import DateDisplay from "../../components/dateDisplay";
 
 const AdminBank = () => {
   const [value, onChange] = useState(new Date());
@@ -21,6 +23,8 @@ const AdminBank = () => {
           <Calendar onChange={onChange} value={value} />
         </Box>
       </Grid>
+      <DateFilter />
+      <DateDisplay />
     </AdminContentLayout>
   );
 };

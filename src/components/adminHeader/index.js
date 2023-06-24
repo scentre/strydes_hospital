@@ -11,7 +11,7 @@ const AdminHeader = () => {
       width="100%"
       justifyContent={"space-between"}
       alignItems={"center"}
-      padding={"20px"}
+      padding={"5px 20px"}
     >
       <Text>
         <span className="text-amber-300 text-[20px] font-black leading-tight">

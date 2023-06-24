@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 
 const AdminPageLayout = () => {
   return (
-    <div className="flex p-[8px] w-full">
+    <div className="flex p-[8px] w-full min-h-full">
       <AdminSideBar />
 
       <div className="flex flex-col w-full ">

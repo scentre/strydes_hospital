@@ -5,7 +5,7 @@ const AdminCard = () => {
   return (
     <Box
       display={"flex"}
-      gap={"22px"}
+      gap={"24px"}
       bg={"white"}
       borderRadius={"45px"}
       shadow={"sm"}
@@ -14,7 +14,7 @@ const AdminCard = () => {
       boxShadow={"0px 24px 48px 0px rgba(16, 24, 40, 0.18)"}
     >
       <Image src={man} />
-      <Box className="pt-5">
+      <Box className="pt-5 w-full">
         <p className="text-black text-[18px] font-bold leading-tight">
           Dr. Adeola Martins
         </p>
@@ -23,8 +23,10 @@ const AdminCard = () => {
           Super Admin
         </p>
       </Box>
-      <div>
-        <Image src={edit} />
+      <div className="flex w-full justify-end">
+        <div className="">
+          <Image src={edit} />
+        </div>
       </div>
     </Box>
   );

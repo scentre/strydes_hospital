@@ -8,6 +8,10 @@ import Styles from "./app.module.scss";
 import EmailConfirmation from "../../pages/emailConfirmation";
 import AdminPageLayout from "../adminPageLayout";
 import AdminBank from "../../pages/adminBank";
+import InPatients from "../../pages/inPatients";
+import OutPatients from "../../pages/outPatients";
+import PharmacyBills from "../../pages/pharmacyBills";
+import Laboratory from "../../pages/Laboratory";
 
 function App() {
   return (
@@ -39,25 +43,33 @@ function App() {
               path="bank"
               element={<PublicRoute restricted={true} component={AdminBank} />}
             />
-            {/* <Route
-              path="user"
-              element={
-                <PublicRoute restricted={true} component={AdminContent} />
-              }
-            />
+            <Route path="user">
+              <Route
+                path="inpatients"
+                element={
+                  <PublicRoute restricted={true} component={InPatients} />
+                }
+              />
+              <Route
+                path="outpatients"
+                element={
+                  <PublicRoute restricted={true} component={OutPatients} />
+                }
+              />
+            </Route>
+
             <Route
               path="circle"
               element={
-                <PublicRoute restricted={true} component={AdminContent} />
+                <PublicRoute restricted={true} component={PharmacyBills} />
               }
             />
+
             <Route
               path="lab"
-              element={
-                <PublicRoute restricted={true} component={AdminContentLayout} />
-              }
+              element={<PublicRoute restricted={true} component={Laboratory} />}
             />
-            <Route
+            {/*   <Route
               path="cross"
               element={
                 <PublicRoute restricted={true} component={AdminContent} />
