@@ -4,11 +4,21 @@ import { Link } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { errorToast, successToast } from "../../utils";
 import { registerUser } from "../../store/auth/authActions";
-import { Box, Button, Flex, Grid, GridItem, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  GridItem,
+  Image,
+  Text,
+} from "@chakra-ui/react";
 import Cicles from "../../assets/circles.svg";
 
 import docs from "../../assets/docs.svg";
 import InputBox from "../../components/inputBox";
+
+import uploadLogo from "../../assets/upload-logo.svg";
 export const Register = () => {
   const dispatch = useDispatch();
   const { loading } = useSelector((state) => state.auth);
@@ -86,7 +96,9 @@ export const Register = () => {
                 <Box alignSelf={"flex-end"} justifySelf={"end"}>
                   <img
                     src={docs}
-                    className="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                    className={
+                      "img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}"
+                    }
                     alt=""
                   />
                 </Box>
@@ -135,10 +147,14 @@ export const Register = () => {
               <Box>
                 <InputBox label="Hospital Address" />
               </Box>
-              <Grid display={"grid"} gridTemplateColumns={"1fr 1fr"}>
+              <Grid
+                display={"grid"}
+                gridTemplateColumns={"2fr 1fr"}
+                gap={"30px"}
+              >
                 <InputBox label="Password" />
                 <GridItem rowSpan={"2"}>
-                  <InputBox label="Hospital Name" size="large" />
+                  <Image src={uploadLogo} />
                 </GridItem>
                 <InputBox label="Confirm Password" />
               </Grid>
