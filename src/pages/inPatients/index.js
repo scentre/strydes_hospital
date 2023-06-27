@@ -1,7 +1,7 @@
 import PatientsTable from "../../components/patientsTable";
 
 const InPatients = () => {
-  return <PatientsTable />;
+  return <PatientsTable name={"In-Patient Department"} />;
 };
 
 export default InPatients;

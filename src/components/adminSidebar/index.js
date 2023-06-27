@@ -85,7 +85,7 @@ const AdminSideBar = () => {
           <Box
             key={id}
             py={"2"}
-            bg={isActive ? "teal.400" : "transparent"}
+            bg={isActive ? "#003229" : "transparent"}
             borderRadius="md"
           >
             <Flex
@@ -138,10 +138,11 @@ const AdminSideBar = () => {
                         py="1"
                         _hover={{ color: "teal.400", cursor: "pointer" }}
                         src={innerIcon}
-                        width="30px"
+                        width="40px"
                         cursor="pointer"
-                        bg={isSubMenuActive ? "teal.400" : "transparent"}
+                        bg={isSubMenuActive ? "#003229" : "transparent"}
                         borderRadius="md"
+                        p={"5px"}
                         onClick={() => navigate(`/admin/${name}/${innerName}`)}
                       />
                     );

@@ -18,7 +18,7 @@ const AdminTable = () => {
       bgColor={"white"}
       borderRadius={"45px"}
       boxShadow={"0px 4px 10px 0px rgba(0, 0, 0, 0.15)"}
-      padding={"30px"}
+      padding={"3 0px"}
     >
       <Box className="flex justify-between items-center">
         <Text className="text-black text-[14px] font-extrabold leading-tight">

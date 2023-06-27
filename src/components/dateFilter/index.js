@@ -13,16 +13,17 @@ const DateFilter = () => {
         margin={"30px 10px"}
       >
         {days.map((day) => (
-          <Button
+          <Text
             onClick={() => setDate(day)}
             className={
               date === day
-                ? "bg-red-600 text-teal-600 text-[20px] font-bold leading-tight"
-                : "text-neutral-700 text-[20px] font-bold leading-tight bg-green-500"
+                ? "text-teal-600 text-[20px] font-bold leading-tight p-2 border-b-2 border-teal-700"
+                : "text-neutral-700 text-[20px] font-bold leading-tight p-2"
             }
+            cursor={"pointer"}
           >
             {day}
-          </Button>
+          </Text>
         ))}
       </Box>
     </Box>

@@ -12,6 +12,7 @@ import InPatients from "../../pages/inPatients";
 import OutPatients from "../../pages/outPatients";
 import PharmacyBills from "../../pages/pharmacyBills";
 import Laboratory from "../../pages/Laboratory";
+import Records from "../../pages/Records";
 
 function App() {
   return (
@@ -70,14 +71,12 @@ function App() {
               path="lab"
               element={<PublicRoute restricted={true} component={Laboratory} />}
             />
-            {/*   <Route
-              path="cross"
-              element={
-                <PublicRoute restricted={true} component={AdminContent} />
-              }
-            />
             <Route
               path="bucket"
+              element={<PublicRoute restricted={true} component={Records} />}
+            />
+            {/*   <Route
+              path="cross"
               element={
                 <PublicRoute restricted={true} component={AdminContent} />
               }
