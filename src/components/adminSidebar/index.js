@@ -12,7 +12,7 @@ import settings from "../../assets/settings.svg";
 import users from "../../assets/users.svg";
 import inPatients from "../../assets/In-Patients.svg";
 import outPatients from "../../assets/Out-Patients.svg";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 import { Box, Flex, Text, Collapse, Icon, Image } from "@chakra-ui/react";
 import { ChevronDownIcon, ChevronRightIcon } from "@heroicons/react/outline";
@@ -20,6 +20,7 @@ import { useState } from "react";
 
 const AdminSideBar = () => {
   const [openMenus, setOpenMenus] = useState([]);
+  const location = useLocation();
 
   //logo
   let logos = [
@@ -78,8 +79,15 @@ const AdminSideBar = () => {
       {logos.map(({ icon, name, id, subMenus }) => {
         const isMenuOpen = openMenus.includes(id);
 
+        const isActive = location.pathname === `/admin/${name}`;
+
         return (
-          <Box key={id} py={"2"}>
+          <Box
+            key={id}
+            py={"2"}
+            bg={isActive ? "teal.400" : "transparent"}
+            borderRadius="md"
+          >
             <Flex
               align="center"
               pl={"3"}
@@ -114,17 +122,30 @@ const AdminSideBar = () => {
             <Collapse in={isMenuOpen} animateOpacity>
               <Box pl="4">
                 {subMenus.map(
-                  ({ id: submenuId, icon: innerIcon, name: innerName }) => (
-                    <Image
-                      key={submenuId}
-                      py="1"
-                      _hover={{ color: "teal.400", cursor: "pointer" }}
-                      src={innerIcon}
-                      width="30px"
-                      cursor="pointer"
-                      onClick={() => navigate(`/admin/${name}/${innerName}`)}
-                    />
-                  )
+                  ({ id: submenuId, icon: innerIcon, name: innerName }) => {
+                    const normalizedLocationPath = location.pathname.replace(
+                      /^\/|\/$/g,
+                      ""
+                    );
+                    const normalizedSubMenuPath =
+                      `/admin/${name}/${innerName}`.replace(/^\/|\/$/g, "");
+                    const isSubMenuActive =
+                      normalizedLocationPath === normalizedSubMenuPath;
+
+                    return (
+                      <Image
+                        key={submenuId}
+                        py="1"
+                        _hover={{ color: "teal.400", cursor: "pointer" }}
+                        src={innerIcon}
+                        width="30px"
+                        cursor="pointer"
+                        bg={isSubMenuActive ? "teal.400" : "transparent"}
+                        borderRadius="md"
+                        onClick={() => navigate(`/admin/${name}/${innerName}`)}
+                      />
+                    );
+                  }
                 )}
               </Box>
             </Collapse>

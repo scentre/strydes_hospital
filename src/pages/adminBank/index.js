@@ -10,6 +10,8 @@ import DateDisplay from "../../components/dateDisplay";
 
 const AdminBank = () => {
   const [value, onChange] = useState(new Date());
+
+  const days = ["Last Year", "Last Month", "Last Week", "Last 24 hours"];
   return (
     <AdminContentLayout>
       <Grid display={"grid"} gridTemplateColumns={"1fr 2fr"} gap={"20px"}>
@@ -23,7 +25,7 @@ const AdminBank = () => {
           <Calendar onChange={onChange} value={value} />
         </Box>
       </Grid>
-      <DateFilter />
+      <DateFilter days={days} />
       <DateDisplay />
     </AdminContentLayout>
   );

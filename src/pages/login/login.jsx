@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import { loginUser } from "../../store/auth/authActions";
 import { errorToast } from "../../utils";
@@ -76,7 +76,6 @@ export const Login = () => {
                   fontSize={"54px"}
                   fontWeight={"extrabold"}
                   padding={"60px 60px 0 60px"}
-                  border={"1px solid red"}
                 >
                   Your One Stop
                 </Text>
@@ -85,7 +84,6 @@ export const Login = () => {
                   fontSize={"144px"}
                   fontWeight={"extrabold"}
                   paddingInline={"60px"}
-                  border={"1px solid red"}
                 >
                   EMR
                 </Text>

@@ -15,8 +15,9 @@ import {
 import edit from "../../assets/edit.png";
 
 import { useState } from "react";
+import SearchBar from "../searchBar";
 
-const PatientsTable = () => {
+const PatientsTable = ({ name }) => {
   const data = [
     { id: 1, name: "John Doe", age: 25 },
     { id: 2, name: "Jane Smith", age: 30 },
@@ -65,10 +66,41 @@ const PatientsTable = () => {
         </Text>
 
         <Box className="text-right">
-          <span className="text-[#139086] text-[14px] font-extrabold float-right flex gap-4 items-center">
+          {name === "Out-Patient Department" ? (
+            <Box
+              display={"flex"}
+              alignContent={"center"}
+              gap={"15px"}
+              justifyContent={"center"}
+            >
+              <div className="">
+                <SearchBar />
+              </div>
+              <Button bg={"#139086"} px={"50px"} color={"white"}>
+                Add Patient
+              </Button>
+            </Box>
+          ) : name === "In-Patient Department" ? (
+            <Box
+              display={"flex"}
+              alignContent={"center"}
+              gap={"15px"}
+              justifyContent={"center"}
+            >
+              <div className="">
+                <SearchBar />
+              </div>
+              <Button bg={"#139086"} px={"50px"} color={"white"}>
+                Discharge
+              </Button>
+            </Box>
+          ) : (
+            ""
+          )}
+          {/* <span className="text-[#139086] text-[14px] font-extrabold float-right flex gap-4 items-center">
             View All
             <Image src={edit} />
-          </span>
+          </span> */}
         </Box>
       </Box>
       <Table variant="unstyled" bgColor={"white"}>

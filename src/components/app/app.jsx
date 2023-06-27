@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { Home } from "../../pages/home";
 import { Login } from "../../pages/login";
 import { Register } from "../../pages/register";
@@ -39,6 +39,7 @@ function App() {
               <PublicRoute restricted={true} component={AdminPageLayout} />
             }
           >
+            <Route path="" element={<Navigate to="bank" replace />} />
             <Route
               path="bank"
               element={<PublicRoute restricted={true} component={AdminBank} />}
