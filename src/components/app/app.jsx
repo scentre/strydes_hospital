@@ -16,10 +16,12 @@ function App() {
         <Routes>
           <Route path="/" element={<PrivateRoute component={Home} />} />
           <Route
+            exact
             path="/login"
             element={<PublicRoute restricted={true} component={Login} />}
           />
-          <Route
+          <Route 
+            exact
             path="/emailconfirmation"
             element={
               <PublicRoute restricted={true} component={EmailConfirmation} />
@@ -30,12 +32,14 @@ function App() {
             element={<PublicRoute restricted={true} component={Register} />}
           />
           <Route
+            exact
             path="/admin"
             element={
               <PublicRoute restricted={true} component={AdminPageLayout} />
             }
           >
             <Route
+              exact
               path="/admin"
               element={
                 <PublicRoute restricted={true} component={AdminContent} />
