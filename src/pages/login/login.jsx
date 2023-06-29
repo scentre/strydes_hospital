@@ -59,12 +59,7 @@ export const Login = () => {
             bgRepeat="no-repeat"
             bgSize={"cover"}
           >
-            <Box
-              display={"flex"}
-              height={"100%"}
-              width={"100%"}
-              border={"1px solid black"}
-            >
+            <Box display={"flex"} height={"100%"} width={"100%"}>
               <Box
                 // mt={"50px"}
                 display={"flex"}
